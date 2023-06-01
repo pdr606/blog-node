@@ -1,0 +1,30 @@
+<div class="bg-light p-5 rounded-lg">
+  <h1 class="display-4">Bem vindo ao blog de Node com Mongo</h1>
+  <p class="lead">Este é um simples projeto utilizando Node e Mongo.</p>
+  <hr class="my-4" />
+  <p>Ferramentas utilizadas: Mongo, Node.JS, Handlebars</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+</div>
+
+<hr />
+
+<h2>Postagens recentes: </h2>
+
+{{#each postagens}}
+  <div class="card mt-4">
+    <div class="card-body">
+      <h3>{{titulo}}</h3>
+      <p>{{descricao}}</p>
+      <a href="/postagem/{{slug}}"><button class="btn btn-success mt-4">Leia
+          mais</button></a>
+      <hr />
+      <small>Categoria: {{categoria.nome}}</small>
+      <small>Data de publicação: {{data}}</small>
+
+    </div>
+  </div>
+
+{{else}}
+  <h5>Nenhuma postagem</h5>
+
+{{/each}}
